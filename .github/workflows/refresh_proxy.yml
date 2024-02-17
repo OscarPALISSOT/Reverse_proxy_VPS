@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  Refresh reverse proxy:
     runs-on: ubuntu-latest
 
     steps:
