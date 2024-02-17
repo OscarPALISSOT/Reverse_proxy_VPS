@@ -1,0 +1,11 @@
+services:
+
+  reverse-proxy:
+    container_name: reverse-proxy
+    image: nginx
+    volumes:
+      - /etc/letsencrypt/:/etc/letsencrypt/
+      - ./nginx/:/etc/nginx/
+    ports:
+      - 80:80
+      - 443:443
