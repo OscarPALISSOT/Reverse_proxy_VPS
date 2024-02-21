@@ -6,6 +6,7 @@ services:
     volumes:
       - /etc/letsencrypt/:/etc/letsencrypt/
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/jardindoscar.conf:/etc/nginx/jardindoscar.conf
     ports:
       - 80:80
       - 443:443
