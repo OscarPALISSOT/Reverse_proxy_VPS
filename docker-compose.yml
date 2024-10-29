@@ -10,3 +10,12 @@ services:
     ports:
       - 80:80
       - 443:443
+
+  certbot:
+    container_name: certbot
+    image: certbot/certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - ./nginx/sites/:/etc/nginx/sites/
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /etc/nginx/sites --quiet --deploy-hook \"nginx -s reload\"; sleep 12h; done'"
