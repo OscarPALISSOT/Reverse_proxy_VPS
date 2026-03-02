@@ -1,0 +1,8 @@
+
+stravamap.oscarpalissot.fr, *.stravamap.oscarpalissot.fr {
+    reverse_proxy reverse-proxy-stravamap:80
+}
+
+jardindoscar.fr, *.jardindoscar.fr {
+    reverse_proxy reverse-proxy-jardindoscar:80
+}
